@@ -1,6 +1,5 @@
 import time
 from time import sleep
-
 from pair import Pair
 
 # Todo ADD PROFIT
@@ -9,8 +8,8 @@ from pair import Pair
 # API KEY, get from your account on binance and set at .env file
 
 #  Set up trading pair, sym=Coin symbol
-trade_sym = 'BNBUSDT'
-balance_sym = 'BNB'
+trade_sym = 'BTCUSDT'
+balance_sym = 'BTC'
 
 # Trade initializer
 pair = Pair()
@@ -52,7 +51,7 @@ while True:  # -----  MAIN LOOP --------
         print("Current price is %s" % current_price)  # print(f"current price is {correctPrice}")
 
         while not pair.trade:  # -------- WAITING TO BUY-------
-            sleep(1)
+
             current_price = pair.get_current_price()  # Current
             # GOES UP      HOLDING USDT
             if current_price - pair.startPrice >= 0:  # sold and price went up
